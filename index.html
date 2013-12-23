@@ -1,50 +1,676 @@
-<!DOCTYPE html>
+<!--(c) Copyright 2012, VersionOne, Inc. All rights reserved. (c)-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+    <head>
+        <title>VersionOne ClearQuest Integration</title>
+	    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">	    
+    </head>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Versionone.integration.clearquest : " />
+    <body>
+	    <table class="pagecontent" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+<td style="width:10%"/>
+			    <td valign="top" class="pagebody">
+				    <div class="pageheader">
+					    <span class="pagetitle">
+                            VersionOne ClearQuest Integration
+                                                    </span>
+				    </div>
+				    <div class="pagesubheading">
+					    This page last changed on May 24, 2011 by <font color="#0050B2">jerry</font>.
+                                    </div>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+				    <style type='text/css'>/*<![CDATA[*/
+div.rbtoc1295899205165 {margin-left: 0px;padding: 0px;}
+div.rbtoc1295899205165 ul {list-style: none;margin-left: 0px;}
+div.rbtoc1295899205165 li {margin-left: 0px;padding-left: 0px;}
 
-    <title>Versionone.integration.clearquest</title>
-  </head>
+/*]]>*/</style><div class='rbtoc1295899205165'>
+<ul>
+    <li><span class='TOCOutline'>1</span> <a href='#VersionOneClearQuestIntegration-Description'>Description</a></li>
+    <li><span class='TOCOutline'>2</span> <a href='#VersionOneClearQuestIntegration-SystemRequirements'>System Requirements</a></li>
+    <li><span class='TOCOutline'>3</span> <a href='#VersionOneClearQuestIntegration-Download'>Download</a></li>
+    <li><span class='TOCOutline'>4</span> <a href='#VersionOneClearQuestIntegration-Installation'>Installation</a></li>
+    <li><span class='TOCOutline'>5</span> <a href='#VersionOneClearQuestIntegration-Configuration'>Configuration</a></li>
+<ul>
+    <li><span class='TOCOutline'>5.1</span> <a href='#VersionOneClearQuestIntegration-ConfigureClearQuest'>Configure ClearQuest </a></li>
+    <li><span class='TOCOutline'>5.2</span> <a href='#VersionOneClearQuestIntegration-ConfigureVersionOne'>Configure VersionOne </a></li>
+    <li><span class='TOCOutline'>5.3</span> <a href='#VersionOneClearQuestIntegration-ConfiguretheIntegration'>Configure the Integration </a></li>
+</ul>
+    <li><span class='TOCOutline'>6</span> <a href='#VersionOneClearQuestIntegration-TechnicalDetails'>Technical Details</a></li>
+</ul></div>
 
-  <body>
+<h2><a name="VersionOneClearQuestIntegration-Description"></a>Description</h2>
+<p>The VersionOne ClearQuest Integration (V1ClearQuest) creates defects in VersionOne based on defects in ClearQuest. Using this integration your organization can manage and triage defects reported by customers and promote them to VersionOne once you determine a fix is necessary.</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/versionone/VersionOne.Integration.ClearQuest">View on GitHub</a>
+<p>Once the integraion is installed and configured, ClearQuest users can assign defects to VersionOne and they appear as Defects in the VersionOne repository. When the VersionOne defect is closed, the integration updates the ClearQuest repository to relfect this change.</p>
 
-          <h1 id="project_title">Versionone.integration.clearquest</h1>
-          <h2 id="project_tagline"></h2>
+<p>The following sequence diagram illustrates how V1ClearQuest interacts with ClearQuest and VersionOne.<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 658x539" href='attachments/ClearQuest/7209187.png'><img src="attachments/thumbnails/ClearQuest/7209187" border="0"/></a></span></p>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/versionone/VersionOne.Integration.ClearQuest/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/versionone/VersionOne.Integration.ClearQuest/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+<h2><a name="VersionOneClearQuestIntegration-SystemRequirements"></a>System Requirements</h2>
+<ul>
+	<li>Operating System — Windows 2003, 2008</li>
+	<li>Framework — Microsoft .Net 2.0 SP1</li>
+	<li>VersionOne — Release 9.0 or above, including Team Edition</li>
+	<li>ClearQuest — ClearQuest 7.0.1 - 7.1</li>
+</ul>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="versiononeintegrationclearquest" class="anchor" href="#versiononeintegrationclearquest"><span class="octicon octicon-link"></span></a>VersionOne.Integration.ClearQuest</h1>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Versionone.integration.clearquest maintained by <a href="https://github.com/versionone">versionone</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+<h2><a name="VersionOneClearQuestIntegration-Download"></a>Download</h2>
+<p>The latest version of V1ClearQuest is available from <a href="http://community.versionone.com/Downloads/default.aspx">the VersionOne Community site </a></p>
 
-    
+<h2><a name="VersionOneClearQuestIntegration-Installation"></a>Installation </h2>
+<p>These installation instructions assume that ClearQuest is already installed, configured, and working properly.</p>
+<ol>
+	<li>Determine Install Location<br/>
+V1ClearQuest can be installed on any server with network access to both VersionOne and ClearQuest. Exact placement should be determined by your internal software management requirements. The integration server must meet the System Requirements stated above.<br class="atl-forced-newline" />
+<br class="atl-forced-newline" /></li>
+	<li>Extract Files<br/>
+Download V1ClearQuest using the link above and extract it into a folder of your choice.<br class="atl-forced-newline" />
+<br class="atl-forced-newline" /></li>
+	<li>Configure<br/>
+Configuration for the ClearQuest Integration is a 3 step process.
+	<ol>
+		<li><a href="#VersionOneClearQuestIntegration-ConfigureClearQuest">Configure ClearQuest</a></li>
+		<li><a href="#VersionOneClearQuestIntegration-ConfigureV1">Configure VersionOne</a></li>
+		<li><a href="#VersionOneClearQuestIntegration-ConfigureServiceHost">Configure ServiceHost</a></li>
+	</ol>
+	</li>
+	<li>Start integration<br/>
+Open up the command prompt, navigate to your installation folder, and run the following command:
+<blockquote><p><tt>VersionOne.ServiceHost.exe</tt></p></blockquote>
+<p>If you have configured your system properly, you should see several [Info] messages followed by a [Startup] message.<br class="atl-forced-newline" />
+<br class="atl-forced-newline" /></p></li>
+	<li>Test the integration<br/>
+To ensure the integration is working, perform the following steps:
+	<ol>
+		<li>Create an Defect in ClearQuest</li>
+		<li>Set the appropriate state in order for the ClearQuest Defect to move to VersionOne</li>
+		<li>Verify that the ClearQuest Defect appears in VersionOne as a Defect</li>
+		<li>Close the defect in VersionOne</li>
+		<li>Verify that the ClearQuest Defect has been updated as expected</li>
+		<li>Shut down the service host by pressing "Q" in the console window.</li>
+	</ol>
+	</li>
+	<li>Install as a Windows Service<br/>
+Run the following command from the console window:
+<blockquote><p><tt>VersionOne.ServiceHost.exe --install</tt></p></blockquote>
+<p>This command installs the service so it will will run under the account NT AUTHORITY\Local Service. Local Service must be given access privileges to the directory where the V1ClearQuest executable was installed so it can store its state and write to log files. Follow the steps below to change the security on the installation directory:</p>
+	<ol>
+		<li>Right click the installation folder from Windows Explorer.</li>
+		<li>Select "properties".</li>
+		<li>Select the "Security" tab.</li>
+		<li>Click the "Add" button.</li>
+		<li>Enter "Local Service" and click "OK".</li>
+		<li>Click the "Allow" checkbox for the "Full Control" row .</li>
+		<li>Click "OK" to save the changes.</li>
+	</ol>
+	</li>
+</ol>
 
-  </body>
+
+<h2><a name="VersionOneClearQuestIntegration-Configuration"></a>Configuration</h2>
+<h3><a name="VersionOneClearQuestIntegration-ConfigureClearQuest"></a>Configure ClearQuest<a name="VersionOneClearQuestIntegration-ConfigureClearQuest"></a> </h3>
+<p>The VersionOne integration relies on States and Actions defined in the ClearQuest schema to process Defects. The ClearQuest schema allows you to customize your process model (a.k.a. workflow) for different types of change requests in the ClearQuest application. Because the schema customization is so flexible, we cannot describe every possible configuration. Therefore the instructions below describe how we customized our schema for testing. We realize that you may have different needs.</p>
+
+<p>The following tables describe the States and Actions we used when testing V1ClearQuest.</p>
+
+<p>ClearQuest States Used by V1ClearQuest</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>State Name</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>SubmitToVersionOne</td>
+<td class='confluenceTd'>Indicates that the Defect is waiting to be published to VersionOne</td>
+</tr>
+<tr>
+<td class='confluenceTd'>AssignedToVersionOne</td>
+<td class='confluenceTd'>Indicates that the Defect is available in the VersionOne applicaiton</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>ClearQuest Actions Used by V1ClearQuest</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Action Name</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>AssignToVersionOne</td>
+<td class='confluenceTd'>Action used by ClearQuest users to assign a Defect to the VersionOne system. This action puts the Defect in the SubmitToVersionOne State</td>
+</tr>
+<tr>
+<td class='confluenceTd'>VersionOneAccepted</td>
+<td class='confluenceTd'>Action used by V1ClearQuest after the Defect is created in VersionOne. This action puts the ClearCase Defect into the AssignedToVersionOne State</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Close</td>
+<td class='confluenceTd'>Action used by V1ClearQuest when the VersionOne Defect is closed</td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<p>Here are the steps to configure the States and Actions defined in the tables above </p>
+
+<ol>
+	<li>Launch ClearQuest Designer</li>
+	<li>Checkout the existing schema you want to update</li>
+	<li>Create a State called "SubmitToVersionOne"<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1095x831" href='attachments/ClearQuest/7209179.jpg'><img src="attachments/thumbnails/ClearQuest/7209179" border="0"/></a></span></li>
+	<li>Set the StateType to "Not_Resolved"<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1094x831" href='attachments/ClearQuest/7209182.jpg'><img src="attachments/thumbnails/ClearQuest/7209182" border="0"/></a></span></li>
+	<li>Create a CHANGE_STATE Action called "AssignToVersionOne"<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1094x831" href='attachments/ClearQuest/7209177.jpg'><img src="attachments/thumbnails/ClearQuest/7209177" border="0"/></a></span></li>
+	<li>Set the Destination State to "SubmitToVersionOne" and the SourceState to "Open" and "Submitted"<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1094x831" href='attachments/ClearQuest/7209174.jpg'><img src="attachments/thumbnails/ClearQuest/7209174" border="0"/></a></span></li>
+	<li>Validate the Schema</li>
+	<li>Create a State called "AssignedToVersionOne"<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1094x831" href='attachments/ClearQuest/7209173.jpg'><img src="attachments/thumbnails/ClearQuest/7209173" border="0"/></a></span></li>
+	<li>Set the StateType to "Not_Resolved"<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1094x831" href='attachments/ClearQuest/7209180.jpg'><img src="attachments/thumbnails/ClearQuest/7209180" border="0"/></a></span></li>
+	<li>Create a CHANGE_STATE Action called "VersionOneAccepted"<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1094x831" href='attachments/ClearQuest/7209175.jpg'><img src="attachments/thumbnails/ClearQuest/7209175" border="0"/></a></span></li>
+	<li>Set the Destination State to "AssignedToVersionOne" and the SourceState to "SubmitToVersionOne"<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1094x831" href='attachments/ClearQuest/7209176.jpg'><img src="attachments/thumbnails/ClearQuest/7209176" border="0"/></a></span></li>
+	<li>Validate the Schema</li>
+	<li>Modify the existing "Close" State and set "AssignedToVersionOne" as a valid SourceState<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1094x831" href='attachments/ClearQuest/7209181.jpg'><img src="attachments/thumbnails/ClearQuest/7209181" border="0"/></a></span></li>
+	<li>Validate the Schema</li>
+	<li>Commit the Schema Changes</li>
+	<li>Upgrade existing database to the new Schema version<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1093x831" href='attachments/ClearQuest/7209178.jpg'><img src="attachments/thumbnails/ClearQuest/7209178" border="0"/></a></span></li>
+</ol>
+
+
+<div class='panelMacro'><table class='noteMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/warning.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td>In addition to States and Actions, please note any Mandatory fields in your system. In our environment, the only mandatory field when closing a defect was "Resolution".</td></tr></table></div>
+
+<h3><a name="VersionOneClearQuestIntegration-ConfigureVersionOne"></a>Configure VersionOne<a name="VersionOneClearQuestIntegration-ConfigureV1"></a> </h3>
+<div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td>Skip this step if you are configuring a VersionOne Team Edition instance.</td></tr></table></div>
+<ol>
+	<li>Add "ClearQuest" to the list of valid Source<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 1920x453" href='attachments/ClearQuest/11173963.jpg'><img src="attachments/thumbnails/ClearQuest/11173963" border="0"/></a></span></li>
+	<li>Determine where to store the ClearQuest ID<br/>
+The integration needs a text field in VersionOne to store the ClearQuest identifier. By default this is the <em>Reference</em> field. If you are already using this field, you'll need to create a custom text field and note the name</li>
+</ol>
+
+
+<h3><a name="VersionOneClearQuestIntegration-ConfiguretheIntegration"></a>Configure the Integration<a name="VersionOneClearQuestIntegration-ConfigureServiceHost"></a> </h3>
+<p>To configure the ClearQuest integration you need to run the ServiceHost configuration tool</p>
+<blockquote><p><tt>ServiceHostConfigTool.exe</tt></p></blockquote>
+<p>The following section describes how to configure your ClearQuest integration using the use the configuration tool </p>
+<ol>
+	<li>On the <b>General</b> tab specify your VersionOne connection details<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 728x711" href='attachments/ClearQuest/7209186.png'><img src="attachments/thumbnails/ClearQuest/7209186" border="0"/></a></span><br/>
+The following table describes the fields on this tab
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Field</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Server URL</td>
+<td class='confluenceTd'>This is the URL to your VersionOne server</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Username</td>
+<td class='confluenceTd'>VersionOne user that will create defects</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Password</td>
+<td class='confluenceTd'>Password for the specified user</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Use Windows Integrated Authentication</td>
+<td class='confluenceTd'>Check this box if you VersionOne server is configured to use Windows Integrated Authentication</td>
+</tr>
+</tbody></table>
+</div>
+<p>If there's a proxy between this machine and the VersionOne instance, you'll also need to configure the following settings:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Field</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Use Proxy For Connection</td>
+<td class='confluenceTd'>Determines if the integration tries to connect through a Proxy</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Proxy URL</td>
+<td class='confluenceTd'>This is the URL to your Proxy Server</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Proxy Username</td>
+<td class='confluenceTd'>The username that will get you past this proxy</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Proxy Password</td>
+<td class='confluenceTd'>The password for the Proxy Username</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Proxy Domain</td>
+<td class='confluenceTd'>Name of Proxy Domain</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+	<li>Once the VersionOne parameters are specified, press Verify button to continue.</li>
+	<li>On the <b>Defects</b> tab specify the VersionOne field that will hold the ClearQuest ID<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 727x711" href='attachments/ClearQuest/7209185.png'><img src="attachments/thumbnails/ClearQuest/7209185" border="0"/></a></span><br/>
+The following table describes the fields on this tab
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Field</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Reference Field Name</td>
+<td class='confluenceTd'>Defect field used to hold ClearQuest ID.  By default this is the Reference field.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Disabled</td>
+<td class='confluenceTd'>Check this box to disable polling VersionOne for Defect updates.</td>
+<td class='confluenceTd'><br class="atl-forced-newline" /></td>
+</tr>
+</tbody></table>
+</div>
+</li>
+	<li>On the <b>ClearQuest</b> tab specify your ClearQuest connection details and the Defect transfer behavior<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 728x948" href='attachments/ClearQuest/9633804.png'><img src="attachments/thumbnails/ClearQuest/7209184" border="0"/></a></span>
+	<ol>
+		<li>Configure the ClearQuest connection (Connection Parameters)
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Field</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Disabled</td>
+<td class='confluenceTd'>Check this box if you want to disable polling ClearQuest for new Defects</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Connection Name</td>
+<td class='confluenceTd'>ClearQuest Connection Identifier</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Username</td>
+<td class='confluenceTd'>Valid ClearQuest user for the connection specified</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Password</td>
+<td class='confluenceTd'>Password for specified user</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Database</td>
+<td class='confluenceTd'>Name of ClearQuest database to use on the specified connection</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+		<li>Click Verify to ensure the connection parameters are correct.</li>
+		<li>Configure how Defects appear in VersionOne
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Field</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Source</td>
+<td class='confluenceTd'> Select the VersionOne Source to use for ClearQuest. <div class='panelMacro'><table class='infoMacro'><colgroup><col width='24'><col></colgroup><tr><td valign='top'><img src="images/icons/emoticons/information.gif" width="16" height="16" align="absmiddle" alt="" border="0"></td><td>VersionOne Team Edition contains a Source value of "External System"</td></tr></table></div></td>
+</tr>
+<tr>
+<td class='confluenceTd'>URL template</td>
+<td class='confluenceTd'>Template for create a VersionOne URL to access specific ClearQuest Defect. #key# is replaced with the ClearQuest Defect ID.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>URL title</td>
+<td class='confluenceTd'>Title to use on VersionOne Link</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+		<li>Configure fields that are mandatory when closing ClearQuest Defects (Mandatory Fields)
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Field</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Name</td>
+<td class='confluenceTd'>Name of field that is required in order to close a Defect in ClearQuest</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Value</td>
+<td class='confluenceTd'>Valid ClearQuest value to set in specified field</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+		<li>Verify State Fields<br/>
+These will only need to be changed if you didn't use our default field names.
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Field</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Awaiting Submit state</td>
+<td class='confluenceTd'>ClearQuest state that indicates which Defects are ready for delivery to VersionOne</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Already Submitted state</td>
+<td class='confluenceTd'>ClearQuest state that indicates which Defects are in the VersionOne system</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Submit Action</td>
+<td class='confluenceTd'>ClearQuest Action to perform once a Defect is successfully <em>created</em> in VersionOne</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Close Action</td>
+<td class='confluenceTd'>ClearQuest Action to perform after the VersionOne Defect is <em>closed</em></td>
+</tr>
+</tbody></table>
+</div>
+</li>
+		<li>Configure ClearQuest Field Names
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Field</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>CQ Entity type</td>
+<td class='confluenceTd'>The name of the Defect entity in your ClearQuest instance</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ID field</td>
+<td class='confluenceTd'>The name of the ClearQuest Field used to uniquely identify the entity</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Defect Title field</td>
+<td class='confluenceTd'>The name of the ClearQuest Field containing the entity title</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Description field</td>
+<td class='confluenceTd'>The name of the ClearQuest Field containing the entity description</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Project  name</td>
+<td class='confluenceTd'>The name of the ClearQuest Field containing the Project Name for this entity</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Owner Login field</td>
+<td class='confluenceTd'>The name of the ClearQuest Field containing the entity owner</td>
+</tr>
+<tr>
+<td class='confluenceTd'>State field</td>
+<td class='confluenceTd'>The name of the ClearQuest Field containing the entity state</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Modify Action</td>
+<td class='confluenceTd'>The name of the ClearQuest Action used to modify the entity</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Poll ClearQuest every</td>
+<td class='confluenceTd'>Determines how frequently the integration polls ClearQuest looking for Defects.</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+	</ol>
+	</li>
+	<li>Map your Projects Values<br/>
+Project Mapping allows you to specify where Defects are created in VersionOne.  The algorithm for selecting a project is as follows:  First, the integration looks for the ClearQuest Project Name in the map.  If it exists, the defect is created in the corresponding VersionOne Project.  If the ClearQuest Project Name is not found, the integration attempts to find a VersionOne Project with the same name.  If found, the integration creates the defect in the VersionOne project with a matching name.  If it cannot find a VersionOne project with a name that matches the ClearQuest Project, the integration will create the defect in the root level node of the VersionOne Project tree or in the first Project in the list if there are multiple top level nodes.<br class="atl-forced-newline" />
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 750x832" href='attachments/ClearQuest/9633805.png'><img src="attachments/thumbnails/ClearQuest/9633805" border="0"/></a></span><br/>
+To add a Project mapping you need to do the following:
+	<ol>
+		<li>Click on the <b>Project and Priority Mapping</b> tab</li>
+		<li>In the Project Mapping grid, select a VersionOne Project value from the dropdown</li>
+		<li>Supply the corresponding ClearQuest Project name.<br/>
+To remove a mapping:</li>
+		<li>Select the desired row.</li>
+		<li>Click the Delete current row button</li>
+	</ol>
+	</li>
+	<li>Map your Priority Values<br/>
+Priority mapping allows you to configure how the VersionOne Defect priority value is set based on the ClearQuest Priority value.  The algorithm for mapping is simple, if the ClearQuest Priority value is in the mapping, the VersionOne defect value is set to the mapped value.  If the ClearQuest Priority value is not found, the VersionOne defect value is not set.<br/>
+<span class="image-wrap" style=""><a class="confluence-thumbnail-link 750x832" href='attachments/ClearQuest/9633805.png'><img src="attachments/thumbnails/ClearQuest/9633805" border="0"/></a></span><br/>
+To add a Priority mapping you need to do the following:
+	<ol>
+		<li>Click on the <b>Project and Priority Mapping</b> tab</li>
+		<li>In the Priority Mappings grid, select a VersionOne Priority value from the dropdown</li>
+		<li>Supply the corresponding ClearQuest Project value name.<br/>
+To remove a mapping:</li>
+		<li>Select the desired row.</li>
+		<li>Click the Delete current row button</li>
+	</ol>
+	</li>
+	<li>Save your changes and exit the program</li>
+</ol>
+
+
+<h2><a name="VersionOneClearQuestIntegration-TechnicalDetails"></a>Technical Details</h2>
+<h4><a name="VersionOneClearQuestIntegration-VersionOne.ServiceHost.exe.config"></a>VersionOne.ServiceHost.exe.config</h4>
+<p>VersionOne.ServiceHost.exe.config is the file that controls the behavior of <em>VersionOne.ServiceHost.exe</em>.  Values in this file are set by the configuration tool (<a href="#VersionOneClearQuestIntegration-ConfigureServiceHost"><em>ServiceHostConfigTool.exe</em></a>).  This section is provided for informational use only.  Users are discouraged from editing this file directly.</p>
+
+<p>The ClearQuestService Element controls how the integration communicates with ClearQuest.  The following table describes the elements nested under ClearQuestService.</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Element Name</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestConnectionName</td>
+<td class='confluenceTd'>Name of ClearQuest connection to use</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestUsername</td>
+<td class='confluenceTd'>Valid user for the connection specified</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestPassword</td>
+<td class='confluenceTd'>Valid password for the Username specified</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestDatabase</td>
+<td class='confluenceTd'>Database instance on the specified connection</td>
+</tr>
+<tr>
+<td class='confluenceTd'>SourceFieldValue</td>
+<td class='confluenceTd'>The value to set in the VersionOne Source field. This must be a valid VersionOne Source</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestWebUrlTemplate</td>
+<td class='confluenceTd'>Template used for creating a VersionOne link to the ClearQuest defect</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestWebUrlTitle</td>
+<td class='confluenceTd'>Title on the VersionOne link</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestMandatoryFields</td>
+<td class='confluenceTd'>This element is used to specify ClearQuest Mandatory fields and the values to use when populating these fields</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestWaitedSubmitToV1State</td>
+<td class='confluenceTd'>ClearQuest State that indicates which Defects are ready for delivery to VersionOne</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestSubmitedToV1Action</td>
+<td class='confluenceTd'>ClearQuest Action to perform once a Defect is successfully created in VersionOne</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestSubmitedToV1State</td>
+<td class='confluenceTd'>ClearQuest State that indicates which Defects are in the VersionOne system</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestCloseAction</td>
+<td class='confluenceTd'>ClearQuest Action to perform when a Defect is closed in VersionOne</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The following configuration parameters describe the ClearQuest entity used by the integration. Each of these elements is also a child of the ClearQuestService element.</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Element Name</th>
+<th class='confluenceTh'>Description</th>
+<th class='confluenceTh'>Value in our test instance</th>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestEntityType</td>
+<td class='confluenceTd'>The name of the Defect entity in your ClearQuest instance</td>
+<td class='confluenceTd'>defect</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestIDField</td>
+<td class='confluenceTd'>The name of the ClearQuest Field used to uniquely identify the entity</td>
+<td class='confluenceTd'>id</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestDefectTitleField</td>
+<td class='confluenceTd'>The name of the ClearQuest Field containing the entity title</td>
+<td class='confluenceTd'>Headline</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestDescriptionField</td>
+<td class='confluenceTd'>The name of the ClearQuest Field containing the entity description</td>
+<td class='confluenceTd'>Description</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestProjectNameField</td>
+<td class='confluenceTd'>The name of the ClearQuest Field containing the Project Name for this entity</td>
+<td class='confluenceTd'>Project.Name</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestOwnerLoginField</td>
+<td class='confluenceTd'>The name of the ClearQuest Field containing the entity owner </td>
+<td class='confluenceTd'>Owner.login_name</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestStateField</td>
+<td class='confluenceTd'>The name of the ClearQuest Field containing the entity state</td>
+<td class='confluenceTd'>State</td>
+</tr>
+<tr>
+<td class='confluenceTd'>ClearQuestModifyAction</td>
+<td class='confluenceTd'>The name of the ClearQuest Action used to modify the entity</td>
+<td class='confluenceTd'>modify</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The DefectWriterService element controls how defects are created in VersionOne. The following table describes the elements nested under DefectWriterService. </p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Element Name</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>ExternalIdFieldName</td>
+<td class='confluenceTd'>Name of VersionOne field that holds the ID of the ClearQuest Defect. Must be a text field</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Settings</td>
+</tr>
+<tr>
+<th class='confluenceTh'>Element Name</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>ApplicationUrl</td>
+<td class='confluenceTd'>VersionOne Application URL</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Username</td>
+<td class='confluenceTd'>Valid VersionOne Username. This user must have authority to create defects in the VersionOne projects being processed.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Password</td>
+<td class='confluenceTd'>Password for specified user</td>
+</tr>
+<tr>
+<td class='confluenceTd'>APIVersion</td>
+<td class='confluenceTd'>The minimum application version required for this hosted service.</td>
+</tr>
+<tr>
+<td class='confluenceTd'>IntegratedAuth</td>
+<td class='confluenceTd'>False if using VersionOne native security, true is using Windows Integrated Security. If VersionOne is configured to use Windows Integrated Security, the account the service is running as must be a configured VersionOne user with a project role of Team Member or higher. Also, Username and Password should be empty if IntegratedAuth is true.</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The TimePublisherService element controls the ClearQuest poll frequency.  The following table describes the elements nested under TimePublisherService.</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Element Name</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Interval</td>
+<td class='confluenceTd'>Number of milliseconds to wait between polls to the ClearQuest system</td>
+</tr>
+<tr>
+<td class='confluenceTd'>PublishClass</td>
+<td class='confluenceTd'>Do Not Change</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The DefectWriterServiceTimer element controls the VersionOne poll frequency.  The following table describes the elements nested under DefectWriterServiceTimer.</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Element Name</th>
+<th class='confluenceTh'>Description</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Interval</td>
+<td class='confluenceTd'>Number of milliseconds to wait between polls to the VersionOne system</td>
+</tr>
+<tr>
+<td class='confluenceTd'>PublishClass</td>
+<td class='confluenceTd'>Do Not Change</td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+                    			    </td>
+<td style="width:10%"/>
+		    </tr>
+	    </table>
+ 	    <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff">
+		    <tr>
+			    <td align="left"><font color="grey">Document generated on May 24, 2011 16:53</font></td>
+		    </tr>
+	    </table> 
+    </body>
 </html>
