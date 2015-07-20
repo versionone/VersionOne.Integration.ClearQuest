@@ -1,0 +1,83 @@
+Installation:
+
+1 download archive with integration
+2 extract files from the archive
+3 modify VersionOne.ServiceHost.exe.config file according with local configuration.
+
+Settings:
+
+<ClearQuestConnectionName>ClearQuestConnectionName</ClearQuestConnectionName>
+ClearQuestConnectionName - name of connection which was created through the "Maintenance tool"
+
+<ClearQuestUsername>Admin</ClearQuestUsername>
+Admin - User name for login to the ClearQuest system
+
+<ClearQuestPassword>Password</ClearQuestPassword>
+Password - Password for login to the ClearQuest system
+
+<ClearQuestDatabase>SAMPL</ClearQuestDatabase>
+SAMPL - Database name with defects in the ClearQuest system
+
+<SourceFieldValue>ClearQuest</SourceFieldValue> 
+ClearQuest - Source value from the VersionOne system for associating with the ClearQuest
+
+<ClearQuestWebUrlTemplate><![CDATA[URL]]></ClearQuestWebUrlTemplate>
+URL - URL to web presentation of defect in the ClearQuest. 
+	#defectid# - Defect id placeholder
+   Example:
+	http://clearquestqomain:2222/cqweb/#/ClearQuestConnectionName/SAMPL/RECORD/#defectid#&format=HTML&noframes=true&recordType=Defect
+
+<ClearQuestWebUrlTitle>ClearQuest</ClearQuestWebUrlTitle>
+ClearQuest - Link name in the VersionOne system to the ClearQuest web interface
+
+<ClearQuestMandatoryFields>
+	<Field name="fieldname">fieldvalue</Field>
+</ClearQuestMandatoryFields>
+Description of mandatory field which need to be filled during closing defect
+fieldname - name of field in the ClearQuest system (case sensitive).
+fieldvalue - value for filling to coording field in the ClearQust system
+
+
+<ClearQuestSubmitedToV1Action>SubmitToV1</ClearQuestSubmitedToV1Action>
+SubmitToV1 - ClearQuest action which change state of defect to <SubmittedToV1>
+
+<ClearQuestCloseAction>Close</ClearQuestCloseAction>
+Close - ClearQuest action which change state of defect to <Closed>
+
+<ClearQuestWaitedSubmitToV1State>WaitedV1</ClearQuestWaitedSubmitToV1State>
+WaitedV1 - ClearQuest state name which mean that this defect has to be copied to the VersionOne system
+
+<ClearQuestSubmitedToV1State>SubmittedToV1</ClearQuestSubmitedToV1State>
+SubmittedToV1 - ClearQuest state name which mean that this defect was copied to the VersionOne system
+
+
+Necessary fields for ClearQuest integration:
+
+id 			- defect id
+Headline		- defect title
+Project.Name		- project name. Value of this field using for matching project name in ClearQuest and VersionOne
+Owner.login_name	- Owner login. Value of this field using for matching owner in ClearQuest and VersionOne
+State			- defect state
+Description		- defect description.
+
+
+Before using ClearQuest integration need to make some preparation:
+
+   1. Create new status behaviour.
+          * create states:
+            defect waiting for submit to the VersionOne (WaitedV1 from config),
+            defect submitted to the VersionOne (SubmittedToV1 from config)
+          * create actions:
+            make defect waiting for submit to the VersionOne
+            defect was submitted to the VersionOne (SubmitToV1 from submit)
+   2. Make some fields mandatory for "waiting for submit to the VersionOne" state:
+          * Owner
+          * Project
+New behavour pattern:
+
+Submitted state -> [WaitV1 action] -> WaitedV1 state -> [SubmittedToV1 action] -> SubmittedToV1 state -> [Close action] -> Closed state
+
+
+
+Way for making this operations described in documentation for the ClearQuest.
+
